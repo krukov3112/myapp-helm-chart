@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: krukov3112/myapp
+  pullPolicy: Always
+  tag: latest
+
+service:
+  name: myapp-service
+  type: NodePort
+  port: 8080           # Порт, доступный внутри кластера
+  targetPort: 8080     # Порт контейнера
+  nodePort: 30080      # Внешний порт для доступа к приложению извне
